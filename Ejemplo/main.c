@@ -2,19 +2,23 @@
 #include <math.h>
 
 int main(void){
-    float r, a, p;
+    float a, b, c, x1, x2;
 
     //1. Pide datos
-    printf("Ingresa radio de circulo ");
-    scanf("%f",&r);
+    printf("Ingresa a ");
+    scanf("%f",&a);
+    printf("Ingresa b ");
+    scanf("%f",&b);
+    printf("Ingresa c ");
+    scanf("%f",&c);
 
     //2. Calcula formula(s)
-    a = M_PI * pow(r,2);
-    p = 2 * M_PI * r;
+    x1 = (-b+sqrt(pow(b,2)-4*a*c)) / (2*a);
+    x2 = (-b-sqrt(pow(b,2)-4*a*c)) / (2*a);
 
     //3. Muestra resultado(s)
-    printf("area = %f\n",a);
-    printf("perimetro = %f\n",p);
+    printf("x1 = %f\n",x1);
+    printf("x2 = %f\n",x2);
 
     return 0;
 }
