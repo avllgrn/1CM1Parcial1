@@ -1,15 +1,19 @@
 #include <stdio.h>
+
 int main(void){
-    float a;
-    float b;
-    printf("Ingresa un valor para a ");
+    float a, b, c;
+
+    //1. Pide datos
+    printf("Ingresa un numero ");
     scanf("%f",&a);
-    printf("Ingresa un valor para b ");
+    printf("Ingresa otro numero ");
     scanf("%f",&b);
-    printf("%f\n",a+b);
-    printf("%f\n",a-b);
-    printf("%f\n",a*b);
-    printf("%f\n",a/b);
-    printf("%f\n",a%b);
+
+    //2. Calcula formula(s)
+    c = a + b;
+
+    //3. Muestra resultado(s)
+    printf("%f + %f = %f\n",a, b, c);
+
     return 0;
 }
