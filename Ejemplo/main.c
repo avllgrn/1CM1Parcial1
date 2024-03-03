@@ -1,19 +1,21 @@
 #include <stdio.h>
 
 int main(void){
-    float a, b, c;
+    float b, h, a, p;
 
     //1. Pide datos
-    printf("Ingresa un numero ");
-    scanf("%f",&a);
-    printf("Ingresa otro numero ");
+    printf("Ingresa base de rectangulo ");
     scanf("%f",&b);
+    printf("Ingresa altura de rectangulo ");
+    scanf("%f",&h);
 
     //2. Calcula formula(s)
-    c = a + b;
+    a = b * h;
+    p = 2*b + 2*h;
 
     //3. Muestra resultado(s)
-    printf("%f + %f = %f\n",a, b, c);
+    printf("area = %f\n",a);
+    printf("perimetro = %f\n",p);
 
     return 0;
 }
