@@ -1,17 +1,16 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(void){
-    float b, h, a, p;
+    float r, a, p;
 
     //1. Pide datos
-    printf("Ingresa base de rectangulo ");
-    scanf("%f",&b);
-    printf("Ingresa altura de rectangulo ");
-    scanf("%f",&h);
+    printf("Ingresa radio de circulo ");
+    scanf("%f",&r);
 
     //2. Calcula formula(s)
-    a = b * h;
-    p = 2*b + 2*h;
+    a = M_PI * pow(r,2);
+    p = 2 * M_PI * r;
 
     //3. Muestra resultado(s)
     printf("area = %f\n",a);
