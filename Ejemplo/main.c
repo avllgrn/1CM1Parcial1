@@ -2,23 +2,26 @@
 #include <math.h>
 
 int main(void){
-    float a, b, c, x1, x2;
+    float x1, y1, x2, y2, x3, y3;
 
     //1. Pide datos
-    printf("Ingresa a ");
-    scanf("%f",&a);
-    printf("Ingresa b ");
-    scanf("%f",&b);
-    printf("Ingresa c ");
-    scanf("%f",&c);
+    printf("Ingresa x1 ");
+    scanf("%f",&x1);
+    printf("Ingresa y1 ");
+    scanf("%f",&y1);
+    printf("Ingresa x2 ");
+    scanf("%f",&x2);
+    printf("Ingresa y2 ");
+    scanf("%f",&y2);
 
     //2. Calcula formula(s)
-    x1 = (-b+sqrt(pow(b,2)-4*a*c)) / (2*a);
-    x2 = (-b-sqrt(pow(b,2)-4*a*c)) / (2*a);
+    x3 = x1 + x2;
+    y3 = y1 + y2;
 
     //3. Muestra resultado(s)
-    printf("x1 = %f\n",x1);
-    printf("x2 = %f\n",x2);
+    printf("  P1(%f, %f)\n",x1,y1);
+    printf("+ P2(%f, %f)\n",x2,y2);
+    printf("= P3(%f, %f)\n",x3,y3);
 
     return 0;
 }
