@@ -2,94 +2,41 @@
 #include <stdlib.h>
 #include <math.h>
 
-void sumaComplejos(void);
-void restaComplejos(void);
-void multiplicaComplejos(void);
-void DivideComplejos(void);
+float calculaDiscriminante(float a, float b, float c);
+float calculax1(float a, float b, float c);
+float calculax2(float a, float b, float c);
 
 int main(void){
+    float a,b,c,disc,x1,x2;
 
-    sumaComplejos();
-    restaComplejos();
-    multiplicaComplejos();
-    DivideComplejos();
+    //1. Pide datos
+    printf("\n\nRaices de una ecuacion de segundo grado (con formula general)\n\n");
+    printf("Ingresa a ");
+    scanf("%f",&a);
+    printf("Ingresa b ");
+    scanf("%f",&b);
+    printf("Ingresa c ");
+    scanf("%f",&c);
+
+    x1 = calculax1(a,b,c);//Se manda calcular x1 en una funcion
+    x2 = calculax2(a,b,c);//Se manda calcular x2 en otra funcion
+
+    //3. Muestra resultado(s)
+    printf("\n\n");
+    printf("x1 = %f\n",x1);
+    printf("x2 = %f\n",x2);
 
     return 0;
 }
-
-void sumaComplejos(void){
-    float r1,i1,r2,i2,r3,i3;
-
-    //1. Pide datos
-    printf("\n\nSuma de complejos\n\n");
-    printf("Ingresa r1 ");scanf("%f",&r1);
-    printf("Ingresa i1 ");scanf("%f",&i1);
-    printf("Ingresa r2 ");scanf("%f",&r2);
-    printf("Ingresa i2 ");scanf("%f",&i2);
-
+float calculaDiscriminante(float a, float b, float c){
     //2. Calcula formula(s)
-    r3 = r1+r2;
-    i3 = i1+i2;
-
-    printf("\n\n");
-    printf("C1\t= %f + %fi\n",r1,i1);
-    printf("C2\t= %f + %fi\n",r2,i2);
-    printf("C1 + C2 = %f + %fi\n",r3,i3);
+    return pow(b,2) - 4*a*c;
 }
-void restaComplejos(void){
-    float r1,i1,r2,i2,r3,i3;
-
-    //1. Pide datos
-    printf("\n\nResta de complejos\n\n");
-    printf("Ingresa r1 ");scanf("%f",&r1);
-    printf("Ingresa i1 ");scanf("%f",&i1);
-    printf("Ingresa r2 ");scanf("%f",&r2);
-    printf("Ingresa i2 ");scanf("%f",&i2);
-
+float calculax1(float a, float b, float c){
     //2. Calcula formula(s)
-    r3 = r1-r2;
-    i3 = i1-i2;
-
-    printf("\n\n");
-    printf("C1\t= %f + %fi\n",r1,i1);
-    printf("C2\t= %f + %fi\n",r2,i2);
-    printf("C1 - C2 = %f + %fi\n",r3,i3);
+    return (-b+sqrt(calculaDiscriminante(a,b,c))) / (2*a);
 }
-void multiplicaComplejos(void){
-    float r1,i1,r2,i2,r3,i3;
-
-    //1. Pide datos
-    printf("\n\nMultiplicacion de complejos\n\n");
-    printf("Ingresa r1 ");scanf("%f",&r1);
-    printf("Ingresa i1 ");scanf("%f",&i1);
-    printf("Ingresa r2 ");scanf("%f",&r2);
-    printf("Ingresa i2 ");scanf("%f",&i2);
-
+float calculax2(float a, float b, float c){
     //2. Calcula formula(s)
-    r3 = r1*r2 - i1*i2;
-    i3 = r1*i2 + r2*i1;
-
-    printf("\n\n");
-    printf("C1\t= %f + %fi\n",r1,i1);
-    printf("C2\t= %f + %fi\n",r2,i2);
-    printf("C1 * C2 = %f + %fi\n",r3,i3);
-}
-void DivideComplejos(void){
-    float r1,i1,r2,i2,r3,i3;
-
-    //1. Pide datos
-    printf("\n\nDivision de complejos\n\n");
-    printf("Ingresa r1 ");scanf("%f",&r1);
-    printf("Ingresa i1 ");scanf("%f",&i1);
-    printf("Ingresa r2 ");scanf("%f",&r2);
-    printf("Ingresa i2 ");scanf("%f",&i2);
-
-    //2. Calcula formula(s)
-    r3 = (r1*r2 + i1*i2) / (pow(r2,2) + pow(i2,2));
-    i3 = (r2*i1 - r1*i2) / (pow(r2,2) + pow(i2,2));
-
-    printf("\n\n");
-    printf("C1\t= %f + %fi\n",r1,i1);
-    printf("C2\t= %f + %fi\n",r2,i2);
-    printf("C1 / C2 = %f + %fi\n",r3,i3);
+    return (-b-sqrt(calculaDiscriminante(a,b,c))) / (2*a);
 }
